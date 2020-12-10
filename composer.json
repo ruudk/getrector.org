@@ -77,7 +77,8 @@
         "psr-4": {
             "Rector\\Website\\": "src",
             "Rector\\Website\\Blog\\": "packages/blog/src",
-            "Rector\\Website\\Demo\\": "packages/demo/src"
+            "Rector\\Website\\Demo\\": "packages/demo/src",
+            "Rector\\Website\\CleaningLadyList\\": "packages/cleaninglady-list/src"
         }
     },
     "autoload-dev": {
