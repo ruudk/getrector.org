@@ -6,6 +6,7 @@ use Rector\CodingStyle\Rector\Function_\CamelCaseFunctionNamingToUnderscoreRecto
 use Rector\Core\Configuration\Option;
 use Rector\DeadCode\Rector\Class_\RemoveUnusedDoctrineEntityMethodAndPropertyRector;
 use Rector\Generic\Rector\FuncCall\FuncCallToStaticCallRector;
+use Rector\Naming\Rector\Class_\RenamePropertyToMatchTypeRector;
 use Rector\Set\ValueObject\SetList;
 use Rector\Transform\ValueObject\FuncCallToStaticCall;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
@@ -26,6 +27,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         SetList::DEAD_DOC_BLOCK,
         SetList::NAMING,
         SetList::TYPE_DECLARATION,
+        // SetList::DOCTRINE_CODE_QUALITY,
         SetList::PHP_70,
         SetList::PHP_71,
         SetList::PHP_72,
@@ -40,6 +42,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
         // false positive removal
         RemoveUnusedDoctrineEntityMethodAndPropertyRector::class,
+        RenamePropertyToMatchTypeRector::class,
 
         // rename internal function to non-existing
         CamelCaseFunctionNamingToUnderscoreRector::class,
