@@ -14,10 +14,11 @@ parameters:
         - "packages/demo/data/DemoFile.php"
 
     ignoreErrors:
-        - '#Attribute class Rector\\Website\\Demo\\Validator\\Constraint\\PHPConstraint does not have the parameter target#'
-
         - '#Method Rector\\Website\\Demo\\Process\\RectorProcessRunner\:\:createProcess\(\) return type has no value type specified in iterable type Symfony\\Component\\Process\\Process#'
         - '#Method Rector\\Website\\Demo\\Form\\DemoFormType\:\:buildForm\(\) has parameter \$formBuilder with no value type specified in iterable type Symfony\\Component\\Form\\FormBuilderInterface#'
         - '#Method Rector\\Website\\Form\\ContactFormType\:\:buildForm\(\) has parameter \$formBuilder with no value type specified in iterable type Symfony\\Component\\Form\\FormBuilderInterface#'
         - '#Method Rector\\Website\\Demo\\Controller\\DemoController\:\:processFormAndReturnRoute\(\) has parameter \$form with no value type specified in iterable type Symfony\\Component\\Form\\FormInterface#'
-        - '#Attribute class Symfony\\Component\\Validator\\Constraints\\NotBlank does not have the parameter target#'
+
+        - '#Property Rector\\Website\\CleaningLadyList\\Repository\\CheckboxRepository\:\:\$entityRepository \(Doctrine\\ORM\\EntityRepository<Rector\\Website\\CleaningLadyList\\Entity\\Checkbox\>\) does not accept Doctrine\\Persistence\\ObjectRepository<Rector\\Website\\CleaningLadyList\\Entity\\Checkbox\>#'
+        # phsptan bug
+        - '#Method Rector\\Website\\CleaningLadyList\\Form\\ProjectFormType\:\:buildForm\(\) has parameter \$formBuilder with no value type specified in iterable type Symfony\\Component\\Form\\FormBuilderInterface#'
