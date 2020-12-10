@@ -6,6 +6,7 @@ namespace Rector\Website\CleaningLadyList\Form;
 
 use Rector\Website\CleaningLadyList\Entity\Project;
 use Rector\Website\ValueObject\FormChoiceChoices;
+use Rector\Website\ValueObject\FormPlaceholder;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -26,21 +27,25 @@ final class ProjectFormType extends AbstractType
 
         $formBuilder->add('currentPhpVersion', ChoiceType::class, [
             'label' => 'Current PHP version',
+            'placeholder' => FormPlaceholder::PICK_ONE,
             'choices' => FormChoiceChoices::PHP_VERSION_CHOICES,
         ]);
 
         $formBuilder->add('targetPhpVersion', ChoiceType::class, [
             'label' => 'Target PHP version',
+            'placeholder' => FormPlaceholder::PICK_ONE,
             'choices' => FormChoiceChoices::PHP_VERSION_CHOICES,
         ]);
 
         $formBuilder->add('currentFramework', ChoiceType::class, [
-            'placeholder' => 'Framework',
+            'label' => 'Current Framework',
+            'placeholder' => FormPlaceholder::PICK_ONE,
             'choices' => FormChoiceChoices::CURRENT_FRAMEWORK_CHOICES,
         ]);
 
         $formBuilder->add('targetFramework', ChoiceType::class, [
-            'label' => 'Framework',
+            'label' => 'Target Framework',
+            'placeholder' => FormPlaceholder::PICK_ONE,
             'choices' => FormChoiceChoices::TARGET_FRAMEWORK_CHOICES,
         ]);
 

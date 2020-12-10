@@ -118,6 +118,11 @@ class Project implements TimestampableInterface
         $projectCheckbox->setProject($this);
     }
 
+    public function setTargetPhpVersion(int $targetPhpVersion): void
+    {
+        $this->targetPhpVersion = $targetPhpVersion;
+    }
+
     public function getTargetPhpVersion(): int
     {
         return $this->targetPhpVersion;

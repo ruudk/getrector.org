@@ -19,6 +19,15 @@
                         <div class="col-6 form-group">
                             {{ form_row(project_form.targetPhpVersion) }}
                         </div>
+
+                        <div class="col-6 form-group">
+                            {{ form_row(project_form.currentFramework) }}
+                        </div>
+
+                        <div class="col-6 form-group">
+                            {{ form_row(project_form.targetFramework) }}
+                        </div>
+
                     </div>
                 {{ form_end(project_form) }}
             </div>

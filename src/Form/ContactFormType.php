@@ -6,6 +6,7 @@ namespace Rector\Website\Form;
 
 use Rector\Website\Entity\ContactMessage;
 use Rector\Website\ValueObject\FormChoices;
+use Rector\Website\ValueObject\FormPlaceholder;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -17,18 +18,13 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 final class ContactFormType extends AbstractType
 {
     /**
-     * @var string
-     */
-    private const PICK_ONE_PLACEHOLDER = 'Pick one...';
-
-    /**
      * @param mixed[] $options
      */
     public function buildForm(FormBuilderInterface $formBuilder, array $options): void
     {
         $formBuilder->add('projectSize', ChoiceType::class, [
             'label' => 'Project size',
-            'placeholder' => self::PICK_ONE_PLACEHOLDER,
+            'placeholder' => FormPlaceholder::PICK_ONE,
             'required' => true,
             'choices' => [
                 'Smaller than 100 000 lines' => 100_000,
@@ -50,8 +46,8 @@ final class ContactFormType extends AbstractType
 
         $formBuilder->add('currentPhpVersion', ChoiceType::class, [
             'label' => 'Current PHP version',
-            'placeholder' => self::PICK_ONE_PLACEHOLDER,
             'choices' => FormChoices::CURRENT_PHP_VERSION,
+            'placeholder' => FormPlaceholder::PICK_ONE,
         ]);
 
         $formBuilder->add('targetPhpVersion', ChoiceType::class, [
