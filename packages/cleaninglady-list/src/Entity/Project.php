@@ -28,7 +28,7 @@ class Project implements TimestampableInterface
      * @ORM\Column(type="string", length=255)
      * @var string
      */
-    private ?string $title = null;
+    private ?string $name = null;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -43,20 +43,19 @@ class Project implements TimestampableInterface
     private ?string $currentPhpVersion = null;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
      */
-    private ?string $desiredFramework = null;
+    private ?string $targetFramework = null;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @var string
+     * @ORM\Column(type="integer")
      */
-    private ?string $desiredPhpVersion = null;
+    private int $targetPhpVersion;
 
     /**
      * @ORM\OneToMany(targetEntity=ProjectCheckbox::class, mappedBy="project")
-     * @var Collection<int, ProjectCheckbox>|ProjectCheckbox[]
+     * @var Collection<int, ProjectCheckbox>
      */
     private Collection $projectCheckboxes;
 
@@ -71,14 +70,14 @@ class Project implements TimestampableInterface
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getName(): ?string
     {
-        return $this->title;
+        return $this->name;
     }
 
-    public function setTitle(string $title): void
+    public function setName(string $name): void
     {
-        $this->title = $title;
+        $this->name = $name;
     }
 
     public function getCurrentFramework(): ?string
@@ -101,26 +100,6 @@ class Project implements TimestampableInterface
         $this->currentPhpVersion = $currentPhpVersion;
     }
 
-    public function getDesiredFramework(): ?string
-    {
-        return $this->desiredFramework;
-    }
-
-    public function setDesiredFramework(string $desiredFramework): void
-    {
-        $this->desiredFramework = $desiredFramework;
-    }
-
-    public function getDesiredPhpVersion(): ?string
-    {
-        return $this->desiredPhpVersion;
-    }
-
-    public function setDesiredPhpVersion(string $desiredPhpVersion): void
-    {
-        $this->desiredPhpVersion = $desiredPhpVersion;
-    }
-
     /**
      * @return Collection<int, ProjectCheckbox>
      */
@@ -137,5 +116,20 @@ class Project implements TimestampableInterface
 
         $this->projectCheckboxes->add($projectCheckbox);
         $projectCheckbox->setProject($this);
+    }
+
+    public function getTargetPhpVersion(): int
+    {
+        return $this->targetPhpVersion;
+    }
+
+    public function getTargetFramework(): ?string
+    {
+        return $this->targetFramework;
+    }
+
+    public function setTargetFramework(?string $targetFramework): void
+    {
+        $this->targetFramework = $targetFramework;
     }
 }

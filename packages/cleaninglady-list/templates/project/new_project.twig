@@ -6,7 +6,21 @@
 
         <div class="row">
             <div class="col-6">
-                {{ form(project_form) }}
+                {{ form_start(project_form) }}
+                    <div class="row">
+                        <div class="col-12 form-group">
+                            {{ form_row(project_form.name) }}
+                        </div>
+
+                        <div class="col-6 form-group">
+                            {{ form_row(project_form.currentPhpVersion) }}
+                        </div>
+
+                        <div class="col-6 form-group">
+                            {{ form_row(project_form.targetPhpVersion) }}
+                        </div>
+                    </div>
+                {{ form_end(project_form) }}
             </div>
             <div class="col-6">
                 <p>

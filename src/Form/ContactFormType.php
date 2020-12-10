@@ -55,7 +55,7 @@ final class ContactFormType extends AbstractType
         ]);
 
         $formBuilder->add('targetPhpVersion', ChoiceType::class, [
-            'label' => 'Goal PHP version',
+            'label' => 'Target PHP version',
             'placeholder' => 'If relevant...',
             'choices' => FormChoices::TARGET_PHP_VERSION,
             'required' => false,
