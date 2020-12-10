@@ -26,7 +26,7 @@ final class CheckboxCheckController extends AbstractController
     #[Route('project/checkbox/check', name: RouteName::CHECKBOX_CHECK)]
     public function __invoke(Request $request): JsonResponse
     {
-        $content = Json::decode($request->getContent());
+        $content = Json::decode((string) $request->getContent());
 
         $submittedToken = $content->token;
         $projectCheckboxId = $content->projectCheckboxId;
