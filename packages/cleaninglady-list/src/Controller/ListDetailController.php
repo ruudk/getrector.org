@@ -16,16 +16,18 @@ use Symfony\Component\Routing\Annotation\Route;
 final class ListDetailController extends AbstractController
 {
     public function __construct(
-        private CheckboxRepository $checkboxRepository,
-        private ProjectRepository $projectRepository,
-        private ProjectCheckboxRepository $projectCheckboxRepository
+        private CheckboxRepository $checkboxRepository
     ) {
     }
 
     #[Route('list/{id}', name: RouteName::LIST_DETAIL)]
-    public function __invoke(Project $project): Response
+    public function __invoke(?Project $project = null): Response
     {
+        dump($project);
+        die;
+
         $currentFramework = (string) $project->getCurrentFramework();
+
         $checkboxes = $this->checkboxRepository->findByFramework($currentFramework);
         return $this->render('project/show.twig', [
             'project' => $project,

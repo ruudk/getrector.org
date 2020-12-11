@@ -34,6 +34,8 @@ final class FormChoiceChoices
         'Phalcon' => 'phalcon',
         'CodeIgniter' => 'code_igniter',
         'Yii' => 'yii',
+        'Custom framework' => 'custom_framework',
+        'spaghetti code' => 'spaghetti_code',
     ];
 
     /**

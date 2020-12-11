@@ -34,13 +34,13 @@ class Project implements TimestampableInterface
      * @ORM\Column(type="string", length=255)
      * @var string
      */
-    private ?string $currentFramework = null;
+    private string $currentFramework;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @var string
      */
-    private ?string $currentPhpVersion = null;
+    private string $currentPhpVersion;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
