@@ -18,11 +18,8 @@ final class ListDetailController extends AbstractController
     }
 
     #[Route('list/{id}', name: RouteName::LIST_DETAIL)]
-    public function __invoke(?Project $project = null): Response
+    public function __invoke(Project $project): Response
     {
-        dump($project);
-        die;
-
         $currentFramework = (string) $project->getCurrentFramework();
 
         $checkboxes = $this->checkboxRepository->findByFramework($currentFramework);
