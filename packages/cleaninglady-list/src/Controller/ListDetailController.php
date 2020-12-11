@@ -6,8 +6,6 @@ namespace Rector\Website\CleaningLadyList\Controller;
 
 use Rector\Website\CleaningLadyList\Entity\Project;
 use Rector\Website\CleaningLadyList\Repository\CheckboxRepository;
-use Rector\Website\CleaningLadyList\Repository\ProjectCheckboxRepository;
-use Rector\Website\CleaningLadyList\Repository\ProjectRepository;
 use Rector\Website\ValueObject\RouteName;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,9 +13,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 final class ListDetailController extends AbstractController
 {
-    public function __construct(
-        private CheckboxRepository $checkboxRepository
-    ) {
+    public function __construct(private CheckboxRepository $checkboxRepository)
+    {
     }
 
     #[Route('list/{id}', name: RouteName::LIST_DETAIL)]
