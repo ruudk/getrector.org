@@ -11,8 +11,8 @@ use Symfony\Component\Routing\Annotation\Route;
 final class DashboardController extends AbstractDashboardController
 {
     #[Route(path: 'admin', name: 'admin')]
-    public function __invoke(): Response
+    public function index(): Response
     {
-        return $this->index();
+        return parent::index();
     }
 }
