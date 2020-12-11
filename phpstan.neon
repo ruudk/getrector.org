@@ -19,6 +19,6 @@ parameters:
         - '#Method Rector\\Website\\Form\\ContactFormType\:\:buildForm\(\) has parameter \$formBuilder with no value type specified in iterable type Symfony\\Component\\Form\\FormBuilderInterface#'
         - '#Method Rector\\Website\\Demo\\Controller\\DemoController\:\:processFormAndReturnRoute\(\) has parameter \$form with no value type specified in iterable type Symfony\\Component\\Form\\FormInterface#'
 
-        - '#Property Rector\\Website\\CleaningLadyList\\Repository\\CheckboxRepository\:\:\$entityRepository \(Doctrine\\ORM\\EntityRepository<Rector\\Website\\CleaningLadyList\\Entity\\Checkbox\>\) does not accept Doctrine\\Persistence\\ObjectRepository<Rector\\Website\\CleaningLadyList\\Entity\\Checkbox\>#'
+        - '#Property Rector\\(.*?)\:\:\$entityRepository \(Doctrine\\ORM\\EntityRepository<(.*?)\>\) does not accept Doctrine\\Persistence\\ObjectRepository<(.*?)\>#'
         # phsptan bug
         - '#Method Rector\\Website\\CleaningLadyList\\Form\\ProjectFormType\:\:buildForm\(\) has parameter \$formBuilder with no value type specified in iterable type Symfony\\Component\\Form\\FormBuilderInterface#'
