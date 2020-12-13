@@ -128,15 +128,6 @@
     "knplabs/doctrine-behaviors": {
         "version": "v2.0.8"
     },
-    "laminas/laminas-code": {
-        "version": "3.4.1"
-    },
-    "laminas/laminas-eventmanager": {
-        "version": "3.2.1"
-    },
-    "laminas/laminas-zendframework-bridge": {
-        "version": "1.0.1"
-    },
     "myclabs/deep-copy": {
         "version": "1.9.3"
     },
@@ -154,9 +145,6 @@
     },
     "nikic/php-parser": {
         "version": "v4.3.0"
-    },
-    "ocramius/proxy-manager": {
-        "version": "2.2.3"
     },
     "ondram/ci-detector": {
         "version": "3.1.0"
@@ -769,9 +757,6 @@
     },
     "twig/twig": {
         "version": "v3.0.1"
-    },
-    "webimpress/safe-writer": {
-        "version": "2.0.0"
     },
     "webmozart/assert": {
         "version": "1.5.0"

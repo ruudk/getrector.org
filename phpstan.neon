@@ -7,7 +7,7 @@ parameters:
         - "src"
         - "packages"
 
-    reportUnmatchedIgnoredErrors: false
+#    reportUnmatchedIgnoredErrors: false
     level: max
 
     excludes_analyse:
@@ -20,5 +20,7 @@ parameters:
         - '#Method Rector\\Website\\Demo\\Controller\\DemoController\:\:processFormAndReturnRoute\(\) has parameter \$form with no value type specified in iterable type Symfony\\Component\\Form\\FormInterface#'
 
         - '#Property Rector\\(.*?)\:\:\$entityRepository \(Doctrine\\ORM\\EntityRepository<(.*?)\>\) does not accept Doctrine\\Persistence\\ObjectRepository<(.*?)\>#'
+
         # phsptan bug
         - '#Method Rector\\Website\\CleaningLadyList\\Form\\ProjectFormType\:\:buildForm\(\) has parameter \$formBuilder with no value type specified in iterable type Symfony\\Component\\Form\\FormBuilderInterface#'
+        - '#Method Rector\\Website\\Admin\\Controller\\CheckboxCrudController\:\:configureFields\(\) return type has no value type specified in iterable type array#'
