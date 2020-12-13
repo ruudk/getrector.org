@@ -35,4 +35,19 @@ final class RouteName
      * @var string
      */
     public const BLOG = 'blog';
+
+    /**
+     * @var string
+     */
+    public const HOMEPAGE = 'homepage';
+
+    /**
+     * @var string
+     */
+    public const LOGIN = 'login';
+
+    /**
+     * @var string
+     */
+    public const ADMIN = 'admin';
 }
