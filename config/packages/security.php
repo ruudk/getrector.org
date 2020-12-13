@@ -67,9 +67,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
                     // Secure the login form against CSRF
                     // Reference': https://symfony.com/doc/current/security/csrf_in_login_form.html
                     'csrf_token_generator' => 'security.csrf.token_manager',
-                    // The page users are redirect to when there is no previous page stored in the
-                    // session (for example when the users access directly to the login page).
-                    'default_target_path' => RouteName::LOGIN,
+                    // https://symfony.com/doc/current/security/form_login.html#changing-the-default-page
+                    'default_target_path' => RouteName::ADMIN,
                 ],
                 'logout' => [
                     // The route name the user can go to in order to logout

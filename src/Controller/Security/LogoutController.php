@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Rector\Website\Controller\Security;
 
 use Exception;
+use Rector\Website\Exception\ShouldNotHappenException;
 use Rector\Website\ValueObject\RouteName;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,6 +18,6 @@ final class LogoutController extends AbstractController
     public function __invoke(Request $request): Response
     {
         // this is handled internally by Symfony security; not sure why this magic is needed here :/
-        throw new Exception('This method can be blank - it will be intercepted by the logout key on your firewall');
+        throw new ShouldNotHappenException('This method can be blank - it will be intercepted by the logout key on your firewall');
     }
 }
