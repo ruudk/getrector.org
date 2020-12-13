@@ -7,7 +7,7 @@ parameters:
         - "src"
         - "packages"
 
-#    reportUnmatchedIgnoredErrors: false
+    reportUnmatchedIgnoredErrors: false
     level: max
 
     excludes_analyse:
