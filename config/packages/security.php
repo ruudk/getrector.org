@@ -53,7 +53,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             ],
 
             'main' => [
-                'pattern' => '^/admin',
+                'pattern' => '^/',
                 'anonymous' => true,
 
                 // This allows the user to login by submitting a username and password

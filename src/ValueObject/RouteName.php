@@ -50,4 +50,9 @@ final class RouteName
      * @var string
      */
     public const ADMIN = 'admin';
+
+    /**
+     * @var string
+     */
+    public const LOGOUT = 'logout';
 }

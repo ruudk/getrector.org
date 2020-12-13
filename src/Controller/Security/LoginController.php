@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rector\Website\Controller;
+namespace Rector\Website\Controller\Security;
 
 use Rector\Website\ValueObject\RouteName;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,17 +22,11 @@ final class LoginController extends AbstractController
     #[Route(path: '/login', name: RouteName::LOGIN)]
     public function __invoke(): Response
     {
-        $error = $this->authenticationUtils->getLastAuthenticationError();
-        $lastUsername = $this->authenticationUtils->getLastUsername();
-
         return $this->render('@EasyAdmin/page/login.html.twig', [
             // parameters usually defined in Symfony login forms
-            'error' => $error,
-            'last_username' => $lastUsername,
+            'error' => $this->authenticationUtils->getLastAuthenticationError(),
+            'last_username' => $this->authenticationUtils->getLastUsername(),
 
-            // the title visible above the login form (define this option only if you are
-            // rendering the login template in a regular Symfony controller; when rendering
-            // it from an EasyAdmin Dashboard this is automatically set as the Dashboard title)
             'page_title' => 'Cleaning Lady List Login',
 
             // the string used to generate the CSRF token. If you don't define
