@@ -17,7 +17,6 @@
         "rector/rector": "dev-master",
         "sensio/framework-extra-bundle": "^5.6",
         "sentry/sentry-symfony": "^3.5",
-        "sensio/framework-extra-bundle": "^5.6",
         "symfony/asset": "^5.2",
         "symfony/cache": "^5.2",
         "symfony/console": "^5.2",
